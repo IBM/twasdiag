@@ -156,8 +156,8 @@
 		<url-pattern>/IBMSystemDump</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
-		<servlet-name>AllocateObject</servlet-name>
-		<url-pattern>/AllocateObject</url-pattern>
+		<servlet-name>AllocateObjects</servlet-name>
+		<url-pattern>/AllocateObjects</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>Hang</servlet-name>
