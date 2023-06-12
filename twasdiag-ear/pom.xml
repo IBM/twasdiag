@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+ (C) Copyright IBM Corporation 2023.
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.example</groupId>
+    <artifactId>twasdiag-ear</artifactId>
+    <packaging>ear</packaging>
+    <version>1.0-SNAPSHOT</version>
+    
+    <parent>
+        <groupId>com.example</groupId>
+        <artifactId>twasdiag</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <profiles>
+        <profile>
+            <id>usr-package</id>
+            <properties>
+                <packaging.type>usr</packaging.type>
+            </properties>        
+        </profile>
+    </profiles>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.example</groupId>
+            <artifactId>twasdiag-war</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <type>war</type>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>twasdiag</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>testCompile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-ear-plugin</artifactId>
+                <version>3.3.0</version>
+                <configuration>
+                    <version>6</version>
+                    <generateApplicationXml>true</generateApplicationXml>
+                    <modules>
+                        <webModule>
+                            <groupId>com.example</groupId>
+                            <artifactId>twasdiag-war</artifactId>
+                            <contextRoot>/twasdiag</contextRoot>
+                        </webModule>
+                    </modules>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>io.openliberty.tools</groupId>
+                <artifactId>liberty-maven-plugin</artifactId>
+                <version>3.8.2</version>
+                <configuration>
+                    <assemblyArtifact>
+                        <groupId>io.openliberty</groupId>
+                        <artifactId>openliberty-runtime</artifactId>
+                        <version>[23.0.0.3,)</version>
+                        <type>zip</type>
+                    </assemblyArtifact>
+                    <serverName>twasdiagServer</serverName>
+                    <configFile>src/main/liberty/config/server.xml</configFile>
+                    <!-- No tests currently -->
+                    <skipTestServer>true</skipTestServer>
+                    <include>${packaging.type}</include>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
