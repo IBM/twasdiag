@@ -67,8 +67,13 @@
                 <artifactId>maven-ear-plugin</artifactId>
                 <version>3.3.0</version>
                 <configuration>
+                    <!-- https://maven.apache.org/plugins/maven-ear-plugin/generate-application-xml-mojo.html#applicationId -->
+                    <!-- https://docs.oracle.com/cd/E13222_01/wls/docs61/programming/app_xml.html -->
                     <version>6</version>
                     <generateApplicationXml>true</generateApplicationXml>
+                    <applicationName>twasdiag</applicationName>
+                    <displayName>twasdiag</displayName>
+                    <description>WebSphere Application Server traditional diagnostic web application</description>
                     <modules>
                         <webModule>
                             <groupId>com.example</groupId>

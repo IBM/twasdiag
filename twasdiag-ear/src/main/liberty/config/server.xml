@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!-- 
  (C) Copyright IBM Corporation 2023.
 
@@ -15,7 +16,10 @@
 -->
 <server>
     <featureManager>
+        <!-- The app only needs Java EE 6, but OpenLiberty only has Java EE 7. -->
         <feature>javaee-7.0</feature>
+
+        <!-- Only needed if using the Dynacache servlet -->
         <feature>distributedMap-1.0</feature>
     </featureManager>
     
