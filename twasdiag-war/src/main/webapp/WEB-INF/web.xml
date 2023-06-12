@@ -23,8 +23,8 @@
 		<servlet-class>com.example.IBMSystemDump</servlet-class>
 	</servlet>
 	<servlet>
-		<servlet-name>AllocateObject</servlet-name>
-		<servlet-class>com.example.AllocateObject</servlet-class>
+		<servlet-name>AllocateObjects</servlet-name>
+		<servlet-class>com.example.AllocateObjects</servlet-class>
 	</servlet>
 	<servlet>
 		<servlet-name>Hang</servlet-name>
