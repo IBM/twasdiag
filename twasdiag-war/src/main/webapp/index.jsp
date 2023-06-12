@@ -89,25 +89,7 @@ body {
 		</div>
 	</div>
 	<div id="content">
-		<p>Select an activity. Clicking any link will open it in a new
-			window/tab. Servlets are preferred over JSPs to enhance source code
-			line number correlation.</p>
-		<p>
-			The options column lists available options for the link and their
-			default values. Options are specified by appending them to the link
-			with a <a href="http://en.wikipedia.org/wiki/Query_string"
-				target="_blank">query string</a>. A query string starts with a
-			question mark (?) and is followed by name/value pairs. The name is
-			case-sensitive. The name is separated from the value with an equal
-			sign (=), and pairs are separated with an ampersand (&amp;). For
-			booleans, use true and false as the value. Example:
-			Link?option1=value&amp;option2=value
-		</p>
-		<p>
-			Contact Kevin Grigorenko (<a
-				href="mailto:kevin.grigorenko@us.ibm.com">kevin.grigorenko@us.ibm.com</a>)
-			with comments or questions.
-		</p>
+		<p>Welcome to twasdiag, a diagnostic web application. Choose something to execute below.</p>
 		<table border="0" cellspacing="0" cellpadding="5">
 			<tr>
 				<th>Activity</th>
