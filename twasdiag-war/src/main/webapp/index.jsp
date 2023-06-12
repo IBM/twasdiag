@@ -194,7 +194,7 @@ body {
 			</tr>
 			<tr>
 				<td>Allocate Objects</td>
-				<td><a href="AllocateObject" target="_blank">/AllocateObject</a>
+				<td><a href="AllocateObjects" target="_blank">/AllocateObjects</a>
 				</td>
 				<td>
 					<ul>
