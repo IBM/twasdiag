@@ -74,6 +74,7 @@
                     <applicationName>twasdiag</applicationName>
                     <displayName>twasdiag</displayName>
                     <description>WebSphere Application Server traditional diagnostic web application</description>
+                    <outputFileNameMapping>@{artifactId}@.@{extension}@</outputFileNameMapping>
                     <modules>
                         <webModule>
                             <groupId>com.example</groupId>
