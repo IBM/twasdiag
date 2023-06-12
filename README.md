@@ -23,11 +23,11 @@ Download `twasdiag.ear` (or `twasdiag.war`) from <https://github.com/IBM/twasdia
 1. Run:
     * macOS and Linux:
       ```
-      ./mvnw -pl '!:twasdiag-war,!:twasdiag' liberty:run
+      ./mvnw -pl ':twasdiag-ear' liberty:run
       ```
     * Windows:
       ```
-      mvnw -pl '!:twasdiag-war,!:twasdiag' liberty:run
+      mvnw -pl ':twasdiag-ear' liberty:run
       ```
 1. Wait for the message, "server is ready to run a smarter planet". For example:
    ```
