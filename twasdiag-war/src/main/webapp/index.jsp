@@ -572,18 +572,10 @@ body {
 				at JNDI name jms/testactivationspec1 to allow the MDB to receive the message.</td>
 			</tr>-->
 		</table>
-		<p>While IBM welcomes any comments or suggestions that might help
-			to improve this utility, it is not supported by IBM and is provided
-			on an "as-is" basis. IBM may make updates if needed and as time
-			permits.</p>
-		<p>
-			IBM, the IBM logo and ibm.com are trademarks of International
-			Business Machines Corp., registered in many jurisdictions worldwide.
-			Other product and service names might be trademarks of IBM or other
-			companies. A current list of IBM trademarks is available on the Web
-			at "Copyright and trademark information" at <a
-				href="http://www.ibm.com/legal/copytrade.shtml" target="_blank">http://www.ibm.com/legal/copytrade.shtml</a>.
-		</p>
+		<p>Running this application in production should be done with care because it may be used to execute various powerful functions.</p>
+		<p>Please ask questions or open issues on <a href="https://github.com/IBM/twasdiag" target="_blank">GitHub</a>.</p>
+		<p>While IBM welcomes any comments or suggestions, this application is not supported by IBM and is provided on an "as-is" basis without warranty of any kind. IBM may make updates if needed and as time permits.</p>
+		<p>Copyright International Business Machines Corporation 2023.</p>
 	</div>
 </body>
 </html>
