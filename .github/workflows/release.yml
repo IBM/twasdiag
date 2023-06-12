@@ -33,4 +33,14 @@ jobs:
             --header "Accept: application/vnd.github.v3+json" \
             --header "Content-Type: $(file -b --mime-type twasdiag-ear/target/twasdiag.ear)" \
             --header "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-            --data-binary @twasdiag-ear/target/twasdiag.ear
+            --data-binary @twasdiag-ear/target/twasdiag.ear && \
+          curl \
+            --silent \
+            --show-error \
+            --fail \
+            --request POST \
+            --url https://uploads.github.com/repos/${{github.repository}}/releases/${RELEASE}/assets?name=twasdiag.war \
+            --header "Accept: application/vnd.github.v3+json" \
+            --header "Content-Type: $(file -b --mime-type twasdiag-war/target/twasdiag.war)" \
+            --header "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            --data-binary @twasdiag-war/target/twasdiag.war

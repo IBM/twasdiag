@@ -6,7 +6,7 @@ Running this application in production should be done with care because it may b
 
 ## Download
 
-Download `twasdiag.ear` from <https://github.com/IBM/twasdiag/releases/latest>
+Download `twasdiag.ear` (or `twasdiag.war`) from <https://github.com/IBM/twasdiag/releases/latest>
 
 ## Development
 
