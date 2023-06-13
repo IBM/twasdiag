@@ -47,7 +47,7 @@ public abstract class BaseServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		out.println("<html>");
 		out.println("<head>");
-		out.println("<title>SWAT EAR | " + name + "</title>");
+		out.println("<title>twasdiag | " + name + "</title>");
 		out.println("</head>");
 		out.println("<body>");
 		out.println("<h1>" + name + "</h1>");
@@ -106,7 +106,7 @@ public abstract class BaseServlet extends HttpServlet {
 
 		println(out, "Done");
 		if (!SUPPRESS_INVOKE_MESSAGES) {
-		    System.out.println("SWAT EAR: Done " + name);
+		    System.out.println("twasdiag: Done " + name);
 		}
 
 		out.println("</body>");
