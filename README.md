@@ -8,6 +8,10 @@ Running this application in production should be done with care because it may b
 
 Download `twasdiag.ear` (or `twasdiag.war`) from <https://github.com/IBM/twasdiag/releases/latest>
 
+## Screenshot
+
+![Screenshot](screenshot.png)
+
 ## Development
 
 1. Java >= 8 is required on your `PATH`; for example, [IBM Semeru Runtimes](https://developer.ibm.com/languages/java/semeru-runtimes/downloads/)
@@ -34,6 +38,6 @@ Download `twasdiag.ear` (or `twasdiag.war`) from <https://github.com/IBM/twasdia
    CWWKF0011I: The twasdiagServer server is ready to run a smarter planet.
    ```
 1. Open your browser to the HTTP or HTTPS page:
-    * <http://localhost:9080/>
-    * <https://localhost:9443/>
-1. Use `Ctrl^C` to stop the server.
+    * <http://localhost:9080/twasdiag/>
+    * <https://localhost:9443/twasdiag/>
+1. When you want to stop the server, use `Ctrl^C`.
