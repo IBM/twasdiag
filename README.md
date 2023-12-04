@@ -1,6 +1,6 @@
 # twasdiag
 
-`twasdiag` is a Java Enterprise Edition 6 web application for executing diagnostics. It was originally designed for [IBM WebSphere Application Server traditional](https://www.ibm.com/docs/en/was-nd/9.0.5) though it may also be used with IBM WebSphere Liberty with the `javaee-6.0` or `javaee-7.0` features.
+`twasdiag` is a Java Enterprise Edition 6 web application for executing diagnostics. It was originally designed for [IBM WebSphere Application Server traditional](https://www.ibm.com/docs/en/was-nd/9.0.5) though it may also be used with [IBM WebSphere Liberty](https://www.ibm.com/docs/en/was-liberty/core) with the `javaee-6.0` or `javaee-7.0` features.
 
 Running this application in production should be done with care because it may be used to execute various powerful functions.
 
