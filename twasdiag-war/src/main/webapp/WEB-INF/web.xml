@@ -31,6 +31,10 @@
 		<servlet-class>com.example.Hang</servlet-class>
 	</servlet>
 	<servlet>
+		<servlet-name>Unhang</servlet-name>
+		<servlet-class>com.example.Unhang</servlet-class>
+	</servlet>
+	<servlet>
 		<servlet-name>SmallRoots</servlet-name>
 		<servlet-class>com.example.SmallRoots</servlet-class>
 	</servlet>
@@ -162,6 +166,10 @@
 	<servlet-mapping>
 		<servlet-name>Hang</servlet-name>
 		<url-pattern>/Hang</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Unhang</servlet-name>
+		<url-pattern>/Unhang</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>SmallRoots</servlet-name>

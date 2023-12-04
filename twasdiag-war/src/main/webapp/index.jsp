@@ -177,9 +177,14 @@ body {
 				<td>Hang a thread using Object.wait</td>
 				<td><a href="Hang">/Hang</a></td>
 				<td>None</td>
-				<td>Hangs the servlet thread infinitely by calling
-				  Object.wait() on a synchronized variable. <b>WARNING</b>: You will
-				  lose this thread until the JVM is restarted!</td>
+				<td>Hangs a servlet thread indefinitely. <b>WARNING</b>: You will
+				  lose this thread until the JVM is restarted (unless you subsequently execute the <a href="Unhang">Unhang</a> page)!</td>
+			</tr>
+			<tr>
+				<td>Unhang threads hung with the Hang page</td>
+				<td><a href="Unhang">/Unhang</a></td>
+				<td>None</td>
+				<td>Unhangs any requests hung with the Hang servlet</td>
 			</tr>
 			<tr>
 				<td>Deadlocker (Dining Philosophers)</td>

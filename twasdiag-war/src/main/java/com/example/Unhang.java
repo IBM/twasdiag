@@ -20,38 +20,14 @@ import java.io.PrintWriter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class Hang extends BaseServlet {
-	private static final long serialVersionUID = 1176497394432711160L;
-
-	public transient static boolean DOHANGING = true;
+public class Unhang extends BaseServlet {
+	private static final long serialVersionUID = -1L;
 
 	@Override
 	protected void doWork(HttpServletRequest request,
 			HttpServletResponse response, PrintWriter out) {
-		println(out, "Hanging...");
-
-		try {
-			DOHANGING = true;
-			String msg = "Hanging this thread! "
-					+ Thread.currentThread().getId();
-			System.out.println(msg);
-			println(out, msg);
-
-			while (DOHANGING) {
-				Thread.sleep(1000);
-			}
-			
-			/*
-			Object o = new Object();
-			synchronized (o) {
-				o.wait();
-			}
-			*/
-
-			println(out, "Finished hanging");
-		} catch (Throwable t) {
-			println(out, "Error hanging: " + t.getLocalizedMessage());
-			t.printStackTrace();
-		}
+		println(out, "Unhanging any hanging requests...");
+		Hang.DOHANGING = false;
+		println(out, "Finished");
 	}
 }
