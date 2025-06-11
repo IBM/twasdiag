@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 IBM Corp. All Rights Reserved.
+ * Copyright 2025 IBM Corp. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy
@@ -20,7 +20,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
@@ -47,7 +46,9 @@ public class DatabaseTest {
 		InitialContext ic = new InitialContext();
 		//managedExecutorService = 
 		//		(ManagedExecutorService) ic.lookup("java:comp/DefaultManagedExecutorService");
-		//ds = (DataSource) PortableRemoteObject.narrow(ic.lookup(jndiName), DataSource.class);
+
+		// Uncomment and also update web.xml resource-ref
+		//ds = (DataSource) ic.lookup("java:comp/env/jdbc/db");
 
 		this.accumulateResults = accumulateResults;
 		this.sleepTime = sleepTime;
