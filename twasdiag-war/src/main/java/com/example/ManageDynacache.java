@@ -92,6 +92,12 @@ public class ManageDynacache extends BaseServlet {
 
 			Object val = cache.get(key);
 			println(out, "Cache value = " + val);
+		} else if (action.equals("remove")) {
+			String key = requestString(request, "key", null);
+			checkNullOrBlank(key, "key");
+
+			Object val = cache.remove(key);
+			println(out, "Removed cache value = " + val);
 		} else if (action.equals("stats")) {
 			println(out, "Cache size = " + cache.size());
 		} else {
