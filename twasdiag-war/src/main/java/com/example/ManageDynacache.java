@@ -28,6 +28,10 @@ public class ManageDynacache extends BaseServlet {
 
 	private static final long serialVersionUID = 1631851946547789014L;
 
+	private boolean isValid(String jndiName) {
+		return !jndiName.contains("://");
+	}
+
 	@Override
 	protected void doWork(HttpServletRequest request,
 			HttpServletResponse response, PrintWriter out) throws Throwable {
@@ -36,7 +40,11 @@ public class ManageDynacache extends BaseServlet {
 		DistributedObjectCache cache = null;
 		if (instance != null) {
 			InitialContext ic = new InitialContext();
-			cache = (DistributedObjectCache) ic.lookup(instance);
+			if (isValid(instance)) {
+				cache = (DistributedObjectCache) ic.lookup(instance);
+			} else {
+				throw new RuntimeException("Invalid instance name");
+			}
 		}
 
 		String action = requestString(request, "action", null);
