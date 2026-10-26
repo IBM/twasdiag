@@ -36,9 +36,11 @@ public class PostServletWrapper extends HttpServlet {
 		boolean wrap = Boolean.valueOf(request.getParameter("wrap"));
 		String txt = request.getParameter("textField");
 		if (wrap && txt != null) {
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/"
-					+ txt);
-			dispatcher.forward(request, response);
+			if (txt.equals("post_sleep.jsp")) {
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/"
+						+ txt);
+				dispatcher.forward(request, response);
+			}
 		}
 	}
 }
