@@ -28,12 +28,12 @@ public class LargeResponse extends BaseServlet {
 	protected void doWork(HttpServletRequest request,
 			HttpServletResponse response, PrintWriter out) throws Throwable {
 		int count = requestInt(request, "count", 1024 * 1024);
-		String incomingPattern = requestString(request, "pattern", "x");
+		String patternString = "x"; //requestString(request, "pattern", "x");
 		int patternMultiply = requestInt(request, "patternMultiply", 1);
 		boolean flush = requestBoolean(request, "flush", false);
 		StringBuilder sb = new StringBuilder();
 		for (int i = 0; i < patternMultiply; i++) {
-			sb.append(incomingPattern);
+			sb.append(patternString);
 		}
 
 		char[] pattern = sb.toString().toCharArray();
