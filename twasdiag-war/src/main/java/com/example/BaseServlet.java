@@ -198,6 +198,9 @@ public abstract class BaseServlet extends HttpServlet {
 			case '\'':
 				sb.append("&#x27;");
 				break;
+			case '/':
+				sb.append("&#x2F;");
+				break;
 			default:
 				sb.append(c);
 			}
