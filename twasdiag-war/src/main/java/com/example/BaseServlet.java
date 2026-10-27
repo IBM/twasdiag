@@ -169,40 +169,10 @@ public abstract class BaseServlet extends HttpServlet {
 	}
 
 	protected void println(PrintWriter out, String message, boolean flush, boolean br) {
-		out.println("[" + new Date() + "] " + escapeHtml(message) + (br ? "<br />" : ""));
+		out.println("[" + new Date() + "] " + org.apache.commons.text.StringEscapeUtils.escapeHtml4(message) + (br ? "<br />" : ""));
 		if (flush) {
 			out.flush();
 		}
-	}
-
-	private static String escapeHtml(String s) {
-		if (s == null) {
-			return null;
-		}
-		StringBuilder sb = new StringBuilder(s.length());
-		for (int i = 0; i < s.length(); i++) {
-			char c = s.charAt(i);
-			switch (c) {
-			case '&':
-				sb.append("&amp;");
-				break;
-			case '<':
-				sb.append("&lt;");
-				break;
-			case '>':
-				sb.append("&gt;");
-				break;
-			case '"':
-				sb.append("&quot;");
-				break;
-			case '\'':
-				sb.append("&#x27;");
-				break;
-			default:
-				sb.append(c);
-			}
-		}
-		return sb.toString();
 	}
 
 	protected abstract void doWork(HttpServletRequest request, HttpServletResponse response, PrintWriter out)
